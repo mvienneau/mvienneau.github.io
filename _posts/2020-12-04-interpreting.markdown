@@ -2,7 +2,7 @@
 layout: post
 title:  "Interpreting"
 date:   2020-12-04 16:50:44 -0700
-categories: posts
+categories: jekyll update
 ---
 ### Writing a Brainfuck Intepreter
 #### Part 1: Python
