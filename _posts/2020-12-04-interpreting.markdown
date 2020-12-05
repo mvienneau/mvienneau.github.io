@@ -163,9 +163,9 @@ class Tape():
 #### Part 2: Clojure
 Writing an interpreter for brainfuck in a language like python was fairly straight forward. The conceptual "tape" made sense as a class, and it was easy to keep track of all that state. Despite this, I thought it would be a good excersize to try and write one in a Lisp (Clojure). 
 
-The first difficulty here taking a very stateful and mutating program I had created, and writing it in a language that doesn't allow mutation.
+The first difficulty here taking a very stateful and mutating program I had created, and writing it in a more functional way.
 
-Keeping with a functional paradigm, using recursion should match well for this type of interperter. Clojure has the function `loop` which makes this easy. Below is a (terrible) way to right a function to produce the nth fibonacci number using the `loop` function in Clojure. (just don't pass it 0,1,2) 
+Keeping with a functional paradigm, using recursion should match well for this type of interperter. Clojure has the function `loop` which makes this easy. Below is a (terrible) way to wright a function to produce the nth fibonacci number using the `loop` function in Clojure. (just don't pass it 0,1,2) 
 {% highlight clojure %}
 (defn fib [n]
   (loop [n1 1 n2 0 iter 2]
@@ -194,6 +194,8 @@ Having this in mind, the following function will evaluate the subset of a brainf
 Here, the memory, memory pointer, and instruction pointer are all initialized in the `loop` bindings. `condp` acts as a sort of switch statement, or a more concise `if/else` chain. 
 
 It was an interesting experience writing these two different programs. They both do the same thing, but in vastly different ways. In Python, it felt most natural to handle all the state in a class, and mutate over it as new instructions came in. While in Clojure, the whole interpreter was able to be represented in a recursive way. 
+
+*Keep in mind, I am still rather new to Clojure and functional programming in general. The `Clojure` section of this is most likely filled with errors and misinformation. I'm trying to learn so take it easy :)*
 
 [brainfuck-wiki]: https://en.wikipedia.org/wiki/Brainfuck
 
