@@ -193,6 +193,8 @@ Having this in mind, the following function will evaluate the subset of a brainf
 {% endhighlight %}
 Here, the memory, memory pointer, and instruction pointer are all initialized in the `loop` bindings. `condp` acts as a sort of switch statement, or a more concise `if/else` chain. 
 
+I leave the problem of filling what the instructions for `[` and `]` might look like to the reader. 
+
 It was an interesting experience writing these two different programs. They both do the same thing, but in vastly different ways. In Python, it felt most natural to handle all the state in a class, and mutate over it as new instructions came in. While in Clojure, the whole interpreter was able to be represented in a recursive way. 
 
 *Keep in mind, I am still rather new to Clojure and functional programming in general. The `Clojure` section of this is most likely filled with errors and misinformation. I'm trying to learn so take it easy :)*
